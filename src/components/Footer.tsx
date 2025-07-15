@@ -9,7 +9,7 @@ const Footer = () => {
             color: '#666'
         }}>
             <p>
-                &copy; {new Date().getFullYear()} Matthew McGarry, All rights reserved.
+                &copy; {new Date().getFullYear()} Matthew McGarry, All rights reserved. 😎
             </p>
             <p>
                 Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT License</a>
