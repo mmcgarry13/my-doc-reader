@@ -1,19 +1,16 @@
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 import mammoth from 'mammoth';
 import Footer from './components/Footer';
+import * as pdfjsLib from 'pdfjs-dist';
 
-import { GlobalWorkerOptions } from 'pdfjs-dist/build/pdf';
-import workerSrc from 'pdfjs-dist/build/pdf.worker?url';
+import pdfjsWorker from 'pdfjs-dist/build/pdf.worker?url';
 
-GlobalWorkerOptions.workerSrc = workerSrc;
-// import * as pdfjsLib from 'pdfjs-dist';
-
-// pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 function App() {
   const [htmlContent, setHtmlContent] = useState<string>('');
 
-  const handleFileUpload = async (event: ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
